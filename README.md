@@ -1,0 +1,2 @@
+# argoCD
+GitOps POC
