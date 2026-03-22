@@ -14,5 +14,7 @@ ArgoCD considers the manifest files in the Git repository as source of truth and
 ![alt text](aroCD_arch.jpg)
 
 API Server - It exposes the API consuemed by UI. It supports authunetication and authorization.
+
 Repo Server - It pulls the state from Git repository.
+
 Application Controller - It is a kubernetes contoller which collects the current running deployment state in Kubernetes and compares it with the Git repository state. Then applies the changes if any mismatch foun
