@@ -69,3 +69,8 @@ echo "<secret>" | base64 --decode
 4. Specify additional path of values.yaml if any required.
 5. Once required details are updated click **Create**.
 6. ArgoCD will start scanning the source and create resoures accordingly.
+
+![alt text](images/helm-example-app.png)
+![alt text](images/helm-example-app-k8s.png)
+
+---
