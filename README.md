@@ -74,3 +74,12 @@ echo "<secret>" | base64 --decode
 ![alt text](images/helm-example-app-k8s.png)
 
 ---
+
+## BlueGreen Deployment
+
+1. Argo Rollouts is a **Custom Resource Definition**, that is used for deployment strategies.
+```sh
+kubectl create namespace argo-rollouts
+kubectl apply -n argo-rollouts -f https://github.com/argoproj/argo-rollouts/releases/latest/download/install.yaml
+```
+2. Supported delpoyment strategies are Canary, Blue-Green deployments, Automated promotion / rollback and Traffic shifting (with service mesh / ingress)
