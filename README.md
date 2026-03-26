@@ -17,4 +17,23 @@ API Server - It exposes the API consuemed by UI. It supports authunetication and
 
 Repo Server - It pulls the state from Git repository.
 
-Application Controller - It is a kubernetes contoller which collects the current running deployment state in Kubernetes and compares it with the Git repository state. Then applies the changes if any mismatch foun
+Application Controller - It is a kubernetes contoller which collects the current running deployment state in Kubernetes and compares it with the Git repository state. Then applies the changes if any mismatch found.
+
+## Setup
+
+1. Create namespace for argocd resources installation and apply the argocd manifest file.
+```sh
+kubectl create namespace argocd
+kubectl apply -n argocd --server-side --force-conflicts -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+```
+
+2. In case of minikube, get the arogocd server service IP to login.
+```sh
+minikube service argocd-server -n argocd
+```
+
+3. Initial login credential is available inside argocd-initial-admin-secret secrets.
+```sh
+kubectl get secrets/argocd-initial-admin-secret -o yaml
+echo "<secret>" | base64 --decode
+ ```
