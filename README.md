@@ -4,7 +4,7 @@ Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.
 It automates application deployment by syncing the desired state defined in a Git repository with the actual state of a Kubernetes cluster. 
 It supports various manifest formats like Helm and Kustomize.
 
-![alt text](argoCD.jpg)
+![alt text](images/argoCD.jpg)
 
 ArgoCD considers the manifest files in the Git repository as source of truth and compares with the deployment state in Kubernetes. When any change made in Git repository, ArgoCD pulls the changes, compares the state and applies the changes in Kubernetes.
 
@@ -12,7 +12,7 @@ ArgoCD considers the manifest files in the Git repository as source of truth and
 
 ## Architecture
 
-![alt text](aroCD_arch.jpg)
+![alt text](images/aroCD_arch.jpg)
 
 API Server - It exposes the API consuemed by UI. It supports authunetication and authorization.
 
@@ -41,9 +41,11 @@ kubectl get secrets/argocd-initial-admin-secret -o yaml
 echo "<secret>" | base64 --decode
  ```
 
- ![alt text](argoCDUI.png)
+ ![alt text](images/argoCDUI.png)
 
 ---
+
+> Refer: https://github.com/argoproj/argocd-example-apps
 
 ## Create application in ArgoCD
 
@@ -51,7 +53,12 @@ echo "<secret>" | base64 --decode
 2. Update required details like **Application Name, Project, SGit source URL and Namespace** details.
 3. Once required details are updated click **Create**.
 4. ArgoCD will start scanning the source and create resoures accordingly.
-5. Try changing the replicas in git and later update deployment to scale down to check how argoCD keeps sync the state.
 
-![alt text](example-app.png)
-![alt text](example-app-k8s.png)
+![alt text](images/example-app.png)
+![alt text](images/example-app-k8s.png)
+
+5. Try changing the replicas in git and later update deployment to scale down to check how argoCD keeps sync the state. (default sync time is 180s)
+
+---
+
+## Create Helm application in ArgoCD
