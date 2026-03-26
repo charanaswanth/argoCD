@@ -83,3 +83,5 @@ kubectl create namespace argo-rollouts
 kubectl apply -n argo-rollouts -f https://github.com/argoproj/argo-rollouts/releases/latest/download/install.yaml
 ```
 2. Supported delpoyment strategies are Canary, Blue-Green deployments, Automated promotion / rollback and Traffic shifting (with service mesh / ingress)
+3. Create blue-green application in argoCD.
+4. Update the image version.
