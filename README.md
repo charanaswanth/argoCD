@@ -50,7 +50,7 @@ echo "<secret>" | base64 --decode
 ## Create application in ArgoCD
 
 1. Select **New App**.
-2. Update required details like **Application Name, Project, SGit source URL and Namespace** details.
+2. Update required details like **Application Name, Project, Git source URL and Namespace** details.
 3. Once required details are updated click **Create**.
 4. ArgoCD will start scanning the source and create resoures accordingly.
 
@@ -62,3 +62,10 @@ echo "<secret>" | base64 --decode
 ---
 
 ## Create Helm application in ArgoCD
+
+1. Select **New App**.
+2. Update required details like **Application Name, Project, Git source URL and Namespace** details.
+3. ArgoCD will automatically detect the helm path and provide in the drop down.
+4. Specify additional path of values.yaml if any required.
+5. Once required details are updated click **Create**.
+6. ArgoCD will start scanning the source and create resoures accordingly.
