@@ -90,6 +90,6 @@ kubectl apply -n argo-rollouts -f https://github.com/argoproj/argo-rollouts/rele
 ```sh
 argocd app patch-resource blue-green --kind Rollout --resource-name blue-green-helm-example-app --patch '{ "status": { "verifyingPreview": false } }' --patch-type 'application/merge-patch+json'
 ```
-![alt text](image/BG2.png)
+![alt text](images/BG2.png)
 
 ---
