@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: gcr.io/google-samples/gb-frontend
-  tag: 2.0
+  tag: v4
   pullPolicy: IfNotPresent
 
 service:
