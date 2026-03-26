@@ -84,4 +84,12 @@ kubectl apply -n argo-rollouts -f https://github.com/argoproj/argo-rollouts/rele
 ```
 2. Supported delpoyment strategies are Canary, Blue-Green deployments, Automated promotion / rollback and Traffic shifting (with service mesh / ingress)
 3. Create blue-green application in argoCD.
-4. Update the image version.
+4. Update the image version. You will be seeing two pods and respective services blue and green connected to it.
+![alt text](images/BG.png)
+5. Run below command to switch to the newer version. Older version will get deleted
+```sh
+argocd app patch-resource blue-green --kind Rollout --resource-name blue-green-helm-example-app --patch '{ "status": { "verifyingPreview": false } }' --patch-type 'application/merge-patch+json'
+```
+![alt text](image/BG2.png)
+
+---
