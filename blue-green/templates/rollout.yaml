@@ -18,6 +18,7 @@ spec:
     blueGreen:
       activeService: {{ template "helm-example-app.fullname" . }}
       previewService: {{ template "helm-example-app.fullname" . }}-preview
+      autoPromotionEnabled: false
   template:
     metadata:
       labels:
