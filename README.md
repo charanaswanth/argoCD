@@ -8,6 +8,7 @@ It supports various manifest formats like Helm and Kustomize.
 
 ArgoCD considers the manifest files in the Git repository as source of truth and compares with the deployment state in Kubernetes. When any change made in Git repository, ArgoCD pulls the changes, compares the state and applies the changes in Kubernetes.
 
+---
 
 ## Architecture
 
@@ -18,6 +19,8 @@ API Server - It exposes the API consuemed by UI. It supports authunetication and
 Repo Server - It pulls the state from Git repository.
 
 Application Controller - It is a kubernetes contoller which collects the current running deployment state in Kubernetes and compares it with the Git repository state. Then applies the changes if any mismatch found.
+
+---
 
 ## Setup
 
@@ -37,3 +40,18 @@ minikube service argocd-server -n argocd
 kubectl get secrets/argocd-initial-admin-secret -o yaml
 echo "<secret>" | base64 --decode
  ```
+
+ ![alt text](argoCDUI.png)
+
+---
+
+## Create application in ArgoCD
+
+1. Select **New App**.
+2. Update required details like **Application Name, Project, SGit source URL and Namespace** details.
+3. Once required details are updated click **Create**.
+4. ArgoCD will start scanning the source and create resoures accordingly.
+5. Try changing the replicas in git and later update deployment to scale down to check how argoCD keeps sync the state.
+
+![alt text](example-app.png)
+![alt text](example-app-k8s.png)
